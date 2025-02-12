@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMOUNT预测</title>
+</head>
+<body>
+    <h1>AMOUNT预测结果</h1>
+
+    <!-- 显示预测的 AMOUNT 数据 -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>年份</th>
+                <th>预测 AMOUNT</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for year, amount in prediction_data %}
+            <tr>
+                <td>{{ year }}</td>
+                <td>{{ amount|floatformat:2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>预测图表</h2>
+    <!-- 在网页中嵌入图表 -->
+    <img src="data:image/png;base64,{{ graph_url }}" alt="AMOUNT预测图表" />
+
+</body>
+</html>

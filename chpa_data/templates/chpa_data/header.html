@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="ui large top fixed inverted menu">
+    <div class="ui container">
+        <a href={% url "chpa:index" %} class="item">首页</a>
+        {%  if request.user.is_staff  %}
+            <a href="{% url 'admin:index' %}" class="item">后台管理</a>
+        {% endif %}
+    </div>
+    <div class="right menu">
+        {%  if not request.user.username  %}
+            <div class="ui item">
+                未登录
+            </div>
+        {% else %}
+            <div class="ui item">
+                您好，{{ request.user.username }}
+            </div>
+            <form action="{% url 'logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="ui item">切换用户</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

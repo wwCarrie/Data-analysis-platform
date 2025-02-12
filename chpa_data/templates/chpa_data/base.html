@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--载入静态文件-->
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>数据分析</title>
+
+    <!-- 使用CDN替代本地文件，这里使用gpt进行修改 -->
+    <!-- 数据表格的样式 -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css">
+
+    <!-- Semantic UI 样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 数据表格的JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+
+    <!-- 其他自定义脚本 -->
+    <!-- 这里需要找到一个替代方案或者自行托管 percentageBars.js -->
+    <script src="https://cdn.jsdelivr.net/gh/some-other-library/percentageBars.js"></script>
+
+    <!-- Semantic UI 的JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+    <!-- ECharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.2/echarts.min.js"></script>
+    <!-- 使用 ECharts GL 扩展的替代链接 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.0/dist/echarts-gl.min.js"></script>
+
+</head>
+<body>
+
+<!--引入导航栏-->
+{% include 'chpa_data/header.html' %}
+
+<!--预留具体页面的位置-->
+{% block body %} {% endblock body %}
+
+<!--引入注脚-->
+{% include 'chpa_data/footer.html' %}
+
+</body>
+</html>
